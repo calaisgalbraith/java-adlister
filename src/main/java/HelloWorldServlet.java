@@ -10,11 +10,15 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
         //DONE Create a page that displays "Hello World!" when a user visits /hello
-        res.getWriter().println("Hello World!");
-
-        //TODO BONUS
         //Make the page say "Hello, <name>!" if name is passed as part of the query string
         // (e.g. /hello?name=codeup), otherwise default to "Hello, World!".
+        String name = req.getParameter("name");
+
+        if ((name == null)) {
+            res.getWriter().println("Hello World!");
+        } else {
+            res.getWriter().printf("Hello %s!", name);
+        }
 
     }
 }

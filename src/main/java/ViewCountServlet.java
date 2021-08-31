@@ -10,10 +10,19 @@ public class ViewCountServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         //Create a page that displays a number that goes up by one every time the /count page is viewed.
-        views++;
-        res.getWriter().printf("Views: %d", views);
 
-        //TODO BONUS
         //Allow the user to pass a parameter in the query string to reset the counter.
+        String reset = req.getParameter("reset");
+        if(reset == null){
+            views++;
+        }
+        else if(reset.equals("reset")){
+            views = 0;
+            views++;
+        }
+
+        res.getWriter().printf("Views: %d\n", views);
+        res.getWriter().println("To reset counter: /count?reset=reset");
+
     }
 }
