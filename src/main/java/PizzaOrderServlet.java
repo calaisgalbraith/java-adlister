@@ -8,12 +8,13 @@ import java.io.IOException;
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet{
 
-    //just for sending form
+    //Get information from pizza form from jsp
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/pizzaOrder.jsp").forward(request, response);
     }
 
-    //where form is interpreted
+
+    //print out info from form when submitted
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.sendRedirect("/completed.jsp");
@@ -21,7 +22,7 @@ public class PizzaOrderServlet extends HttpServlet{
         String crust = request.getParameter("crust");
         String sauce = request.getParameter("sauce");
         String size = request.getParameter("size");
-        String toppings[] = request.getParameterValues("toppings");
+        String[] toppings = request.getParameterValues("toppings");
         String address = request.getParameter("address");
 
         System.out.println(crust);

@@ -15,7 +15,10 @@ public class GuessServlet extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        int guess = Integer.parseInt(request.getParameter("number"));
-       int actual = (int) ((Math.random() * (3 - 1)) + 1);
+
+       int max = 3;
+       int min = 1;
+       int actual = (int) ((Math.random() * (max - min)) + min);
 
         System.out.println("Guess: " + guess);
         System.out.println("Actual: " + actual);
