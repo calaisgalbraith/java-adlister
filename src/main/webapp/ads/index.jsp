@@ -10,16 +10,16 @@
 
 <html>
 <head>
-    <title>Index</title>
+    <title>Show Ads</title>
 </head>
 <body>
-    <h1>All dao.Ads Listed: </h1>
+    <h1>Ads Listed: </h1>
 
     <c:forEach var="ad" items ="${ads}">
         <div class="ad">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
-                <br>
+            <br>
         </div>
     </c:forEach>
 
