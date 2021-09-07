@@ -3,7 +3,11 @@
 
 <!doctype html>
 <html>
+<head>
+    <jsp:include page="partials/head.jsp"/>
+</head>
 <body>
+    <jsp:include page="partials/navbar.jsp"/>
     <h1>PROFILE</h1>
 </body>
 </html>

@@ -15,7 +15,13 @@
 
 <!doctype html>
 <html>
+<head>
+    <title>Login</title>
+    <jsp:include page="partials/head.jsp"/>
+</head>
 <body>
+
+    <jsp:include page="partials/navbar.jsp"/>
 
     <form action = "/login.jsp" method = "POST">
         <label for="username">Username</label>
